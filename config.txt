@@ -1,0 +1,27 @@
+#
+# config.txt
+#
+
+disable_overscan=1
+framebuffer_width=960
+framebuffer_height=640
+hdmi_force_hotplug=1
+hdmi_cvt=928 618 60 6 1 0 1
+#hdmi_cvt=464 310 60 6 1 0 1
+hdmi_group=2
+hdmi_mode=87
+
+# uncomment to use on a TV, not a monitor
+# hdmi_drive=2
+
+hdmi_ignore_edid=0xa5000080
+dtparam=audio=on
+[pi1]
+device_tree=bcm2708-rpi-b-plus.dtb
+[pi2]
+device_tree=bcm2709-rpi-2-b.dtb
+[all]
+dtparam=spi=on
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+dtoverlay=pitft35-resistive,rotate=90,speed=62000000,fps=60

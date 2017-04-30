@@ -1,0 +1,31 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+
+# disable console blanking on PiTFT
+sudo sh -c "TERM=linux setterm -blank 0 >/dev/tty0"
+
+# initialize global variables
+export SDL_FBDEV=/dev/fb1
+export SDL_VIDEODRIVER=fbcon
+export SWITCH_VOL=85
+
+# move all console messages
+sudo chvt 7
+vcgencmd display_power 0
+cat /home/pi/RaspberrySplit/Startup/PiLogo.raw >/dev/fb1
+sudo omxplayer -o local --vol -1000 /home/pi/RaspberrySplit/Startup/StartupMovie.mp4 --aspect-mode stretch &
+sleep 2.2
+/home/pi/RaspberrySplit/Apps/raspi2fb --fps 30 &
+sleep 2.8
+sudo killall raspi2fb
+sudo killall omxplayer
+sleep 0.1
+cat /home/pi/RaspberrySplit/Startup/HomeScreenPlaceholder.raw >/dev/fb1
+sudo chvt 7
+sudo hciconfig hci0 piscan
+
+/home/pi/RaspberrySplit/Startup/Start.sh
+
+exit 0
