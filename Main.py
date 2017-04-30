@@ -93,6 +93,8 @@ if dpi == 1:
     s1 = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Shutdown1.png")
     s2 = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Shutdown2.png")
     s3 = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Shutdown3.png")
+
+    cont2 = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Cont2.png")
 else:
     gray = pygame.image.load("/home/pi/RaspberrySplit/Theme/Retina/BG.png")
     handheld = pygame.image.load("/home/pi/RaspberrySplit/Theme/Retina/Handheld.png")
@@ -105,9 +107,10 @@ else:
     s2 = pygame.image.load("/home/pi/RaspberrySplit/Theme/Retina/Shutdown2.jpg")
     s3 = pygame.image.load("/home/pi/RaspberrySplit/Theme/Retina/Shutdown3.jpg")
 
+    cont2 = pygame.image.load("/home/pi/RaspberrySplit/Theme/Retina/Cont2.png")
+
 #Blank image for last box, that you're not supposed to access:
 gd = pygame.image.load("/home/pi/RaspberrySplit/Theme/Blank.png")
-cont2 = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Cont2.png")
 pleasewait = pygame.image.load("/home/pi/RaspberrySplit/Theme/NonRetina/Loading.png")
 
 joy = True
@@ -549,7 +552,7 @@ while not done:
                         frame = 0
                         if (not timed and os.popen('cat /home/pi/connected').read() == "0\n"):
                             att.play()
-                            os.system("/home/pi/RaspberrySplit/Apps/pngview -n /home/pi/RaspberrySplit/Themes/Retina/Cont1.png &")
+                            os.system("/home/pi/RaspberrySplit/Apps/pngview -n /home/pi/RaspberrySplit/Theme/Retina/Cont1.png &")
                             os.system("/home/pi/RaspberrySplit/Scripts/PauseGame.sh")
                             while True:
                                 clock.tick(120)
