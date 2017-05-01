@@ -133,6 +133,8 @@ for subdir, dirs, files in os.walk(rootdir):
         print("file " + file)
         print("filename " + file_name)
         if (file != file_name and file[0] != "."):
+            if (i == 0):
+                selectedName = file_name
             images.append(pygame.image.load("/boot/Games/BoxArt/" + file_name + "@" + str(dpi) + "x.png"))
             boxes.append(gamebox(i, images[i], file_name, "/boot/Games/GameFiles/" + file_name + ".32bit"))
             i += 1

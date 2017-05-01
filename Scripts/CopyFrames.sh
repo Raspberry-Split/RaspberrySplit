@@ -1,1 +1,1 @@
-/home/pi/RaspberrySplit/Apps/raspi2fb --fps 25 &
+/home/pi/RaspberrySplit/Apps/raspi2fb --fps 60 &

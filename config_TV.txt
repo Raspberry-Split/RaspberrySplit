@@ -11,8 +11,7 @@ hdmi_cvt=928 618 60 6 1 0 1
 hdmi_group=2
 hdmi_mode=87
 
-# uncomment to use on a TV, not a monitor
-# hdmi_drive=2
+hdmi_drive=2
 
 hdmi_ignore_edid=0xa5000080
 dtparam=audio=on
